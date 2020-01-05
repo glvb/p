@@ -47,3 +47,6 @@ body {
   margin: 0;
   padding: 8px;
 }
+.error {
+  color: red;
+}

@@ -4,17 +4,20 @@ $(document).ready(function() {
 })
 console.logOrig = console.log
 console.log = function(value) {
-  var currValue = $('#output').text()
-  $('#output').text(currValue + value + '\n')
+  $('#output').append(value)
+  $('#output').append('\n')
 }
 function run() {
-  $('#output').text('')
+  $('#output').html('')
   try {
     eval($('#code').val())
   } catch(err) {
-    console.log(err)
+    console.log(wrapError(err))
   }
 }
 function share() {
   alert(encodeURI(document.getElementById('code').value))
+}
+function wrapError(err) {
+  return "<span class=\"error\">" + err + "</span>"
 }
