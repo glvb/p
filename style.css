@@ -27,6 +27,7 @@ button {
   float: left;
   overflow: hidden;
   text-align: right;
+  color: #a9a9a9;
 }
 .lines div {
   padding-right: 8px;
