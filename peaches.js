@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#code').linedtextarea();
+  $('#code').linedtextarea()
   $('#code').val(decodeURI(window.location.search.substring(1)))
 })
 console.logOrig = console.log
@@ -16,7 +16,10 @@ function run() {
   }
 }
 function share() {
-  alert(encodeURI(document.getElementById('code').value))
+  var path = window.location.href.split('?')[0]
+  $('#share-link').val(path + '?' + encodeURI(document.getElementById('code').value))
+  $('#share-link').show()
+  $('#share-link').select()
 }
 function wrapError(err) {
   return "<span class=\"error\">" + err + "</span>"

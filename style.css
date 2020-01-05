@@ -20,6 +20,9 @@ button {
   padding: 8px;
   background: peachpuff;
 }
+#share-link {
+  display: none;
+}
 .lines {
   float: left;
   overflow: hidden;
