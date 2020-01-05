@@ -1,45 +1,16 @@
 <html>
-<style>
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 16px;
-}
-textarea {
-  height: 500px;
-  padding: 8px;
-  width: 100%;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 16px;
-  border: none;
-  overflow: auto;
-  outline: none;
-  resize: none;
-}
-</style>
+<head>
+  <title>Peaches</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="jquery-linedtextarea.js"></script>
+  <script src="peaches.js"></script>
+</head>
 <body>
-<textarea id="code" spellcheck="false"></textarea>
-<button onclick="run()">Run</button>
-<button onclick="share()">Share</button>
-<textarea id="logs" spellcheck="false"></textarea>
-<canvas id="canvas" width="300" height="150"></canvas>
-<script>
-document.getElementById("code").value = decodeURI(window.location.search.substring(1))
-console.logOrig = console.log
-console.log = function(value) {
-  document.getElementById("logs").value += value + "\n"
-}
-function run() {
-  document.getElementById("logs").value = ""
-  eval(document.getElementById("code").value)
-}
-function share() {
-  alert(encodeURI(document.getElementById("code").value))
-}
-</script>
+  <button onclick="run()">Run</button>
+  <button onclick="share()">Share</button>
+  <textarea id="code" spellcheck="false"></textarea>
+  <div class="h-divider"></div>
+  <textarea id="output" class="console-panel" spellcheck="false" readonly></textarea>
 </body>
 </html>
