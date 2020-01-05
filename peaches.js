@@ -4,12 +4,16 @@ $(document).ready(function() {
 })
 console.logOrig = console.log
 console.log = function(value) {
-  var currVal = $('#output').val()
-  $('#output').val(currVal + value + '\n')
+  var currValue = $('#output').text()
+  $('#output').text(currValue + value + '\n')
 }
 function run() {
-  $('#output').val('')
-  eval($('#code').val())
+  $('#output').text('')
+  try {
+    eval($('#code').val())
+  } catch(err) {
+    console.log(err)
+  }
 }
 function share() {
   alert(encodeURI(document.getElementById('code').value))
