@@ -1,5 +1,5 @@
 var editor
-$(document).ready(function() {
+$(document).ready(function () {
   editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     lineNumbers: true,
     mode: 'javascript'
@@ -8,13 +8,13 @@ $(document).ready(function() {
 })
 function run() {
   console.logOrig = console.log
-  console.log = function(value) {
+  console.log = function (value) {
     $('#output').append(value + '\n')
   }
   $('#output').html('')
   try {
     eval(editor.getValue())
-  } catch(err) {
+  } catch (err) {
     console.log(wrapError(err))
   }
   console.log = console.logOrig

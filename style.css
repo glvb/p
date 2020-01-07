@@ -1,42 +1,51 @@
 html {
   height: 100%;
 }
+
 body {
   width: 100%;
   height: 100%;
   margin: 0;
   font-size: 11pt;
 }
+
 button {
   padding: 8px;
   font-size: 11pt;
 }
+
 .main {
   display: flex;
   flex-flow: column;
   height: 100%;
 }
+
 .header {
   padding: 8px;
   background: peachpuff;
 }
+
 #share-link {
   display: none;
 }
+
 .CodeMirror {
   height: 100%;
   font-family: "Courier New", Courier, monospace;
   background: lightgoldenrodyellow;
 }
+
 .console {
   height: 300px;
   margin: 0;
   padding: 8px;
   border-top: 1px solid #ddd;
 }
+
 #output {
   font-family: "Courier New", Courier, monospace;
 }
+
 .error {
   color: red;
 }
