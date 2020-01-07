@@ -20,7 +20,7 @@ function run() {
   console.log = console.logOrig
 }
 function share() {
-  var basePath = 'https://glvb.github.io/p'
+  var basePath = 'https://glvb.github.io/p/'
   var currValue = editor.getValue()
   if (currValue === '') {
     $('#share-link').val(basePath)
