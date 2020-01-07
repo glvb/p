@@ -3,7 +3,9 @@ $(document).ready(function () {
   editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     lineNumbers: true,
     mode: 'javascript',
-    autofocus: true
+    autofocus: true,
+    indentUnit: 4,
+    indentWithTabs: true
   })
   editor.getDoc().setValue(atob(decodeURI(window.location.search.substring(1))))
 })
