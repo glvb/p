@@ -20,13 +20,13 @@ function run() {
   console.log = console.logOrig
 }
 function share() {
-  var path = window.location.href.split('?')[0]
+  var basePath = 'https://glvb.github.io/p'
   var currValue = editor.getValue()
   if (currValue === '') {
-    $('#share-link').val(path)
+    $('#share-link').val(basePath)
     return
   }
-  $('#share-link').val(path + '?' + encodeURI(btoa(currValue)))
+  $('#share-link').val(basePath + '?' + encodeURI(btoa(currValue)))
   $('#share-link').show()
   $('#share-link').select()
 }

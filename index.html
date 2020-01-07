@@ -1,8 +1,22 @@
 <html>
 <head>
   <title>Peaches</title>
-  <meta http-equiv="refresh" content="0;url=i.htm" />
+  <link rel="stylesheet" href="lib/codemirror-5.50.2/codemirror.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="lib/codemirror-5.50.2/codemirror.js"></script>
+  <script src="lib/codemirror-5.50.2/mode/javascript/javascript.js"></script>
+  <script src="lib/jquery-1.8.2/jquery.min.js"></script>
+  <script src="peaches.js"></script>
 </head>
 <body>
+  <div class="main">
+    <div class="header">
+      <button onclick="run()">Run</button>
+      <button onclick="share()">Share</button>
+      <input id="share-link" type="url">
+    </div>
+    <textarea id="code" spellcheck="false"></textarea>
+    <pre class="console"><code id="output"></code id="output"></pre>
+  </div>
 </body>
 </html>
