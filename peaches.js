@@ -2,7 +2,8 @@ var editor
 $(document).ready(function () {
   editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     lineNumbers: true,
-    mode: 'javascript'
+    mode: 'javascript',
+    autofocus: true
   })
   editor.getDoc().setValue(atob(decodeURI(window.location.search.substring(1))))
 })
