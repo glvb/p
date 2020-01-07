@@ -24,6 +24,8 @@ button {
 }
 .CodeMirror {
   height: 100%;
+  font-size: 11pt;
+  font-family: "Courier New", Courier, monospace;
   background: lightgoldenrodyellow;
 }
 .console {
@@ -31,6 +33,10 @@ button {
   margin: 0;
   padding: 8px;
   border-top: 1px solid #ddd;
+}
+#output {
+  font-size: 11pt;
+  font-family: "Courier New", Courier, monospace;
 }
 .error {
   color: red;
