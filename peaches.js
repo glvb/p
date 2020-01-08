@@ -7,7 +7,11 @@ $(document).ready(function () {
     indentUnit: 4,
     indentWithTabs: true
   })
-  editor.getDoc().setValue(atob(decodeURI(window.location.search.substring(1))))
+  var params = window.location.search.substring(1)
+  if (params !== '') {
+    var decompressed = LZString.decompressFromEncodedURIComponent(params)
+    editor.getDoc().setValue(decompressed)
+  }
 })
 function run() {
   console.logOrig = console.log
@@ -23,13 +27,13 @@ function run() {
   console.log = console.logOrig
 }
 function share() {
-  var basePath = 'https://glvb.github.io/p/'
   var currValue = editor.getValue()
+  var basePath = window.location.href.split('?')[0]
   if (currValue === '') {
     $('#share-link').val(basePath)
     return
   }
-  $('#share-link').val(basePath + '?' + encodeURI(btoa(currValue)))
+  $('#share-link').val(basePath + '?' + LZString.compressToEncodedURIComponent(currValue))
   $('#share-link').show()
   $('#share-link').select()
 }
