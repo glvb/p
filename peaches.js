@@ -12,7 +12,7 @@ $(document).ready(function () {
     var decompressed = LZString.decompressFromEncodedURIComponent(params)
     editor.getDoc().setValue(decompressed)
   }
-  editor.on("change", function() {
+  editor.on("changes", function() {
     $('#share-link:visible').hide()
   })
 })
